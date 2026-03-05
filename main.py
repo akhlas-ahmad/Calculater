@@ -5,7 +5,7 @@ st.set_page_config(page_title="Advanced Calculator", layout="centered")
 
 # ---------------- SESSION STATE ----------------
 if "expression" not in st.session_state:
-st.session_state.expression = st.session_state.expression.split("=")[0]
+    st.session_state.expression = st.session_state.expression.split("=")[0]
 
 if "history" not in st.session_state:
     st.session_state.history = []
