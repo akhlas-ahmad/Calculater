@@ -95,7 +95,20 @@ buttons = [
 for row in buttons:
     cols = st.columns(4)
     for i, btn in enumerate(row):
-        cols[i].button(btn, on_click=press, args=(btn,), use_container_width=True)
+        with cols[i]:
+            # Agar button + hai → CSS orange
+            if btn == "+":
+                st.markdown("""
+                    <style>
+                    div.stButton > button:first-child {
+                        background-color: orange;
+                        color: white;
+                        height: 3em;
+                        width: 100%;
+                    }
+                    </style>
+                """, unsafe_allow_html=True)
+            st.button(btn, on_click=press, args=(btn,), use_container_width=True)
 
 # ---------------- MEMORY ----------------
 st.write(f"🧠 Memory: {st.session_state.memory}")
