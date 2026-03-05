@@ -3,28 +3,6 @@ import math
 
 st.set_page_config(page_title="Advanced Calculator", layout="centered")
 
-# ---------- OPERATOR BUTTON COLOR ----------
-st.markdown("""
-<style>
-
-div.stButton > button {
-    height: 60px;
-    font-size: 20px;
-}
-
-/* operator buttons */
-button:has(span:contains("+")),
-button:has(span:contains("-")),
-button:has(span:contains("*")),
-button:has(span:contains("/")),
-button:has(span:contains("=")) {
-    background-color: orange !important;
-    color: white !important;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
 # ---------------- SESSION STATE ----------------
 if "expression" not in st.session_state:
     st.session_state.expression = ""
